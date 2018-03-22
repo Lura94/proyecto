@@ -2,43 +2,83 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="estilos.css">
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<meta charset="UTF-8">
 	<meta name="vieport">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  
 	<title>Document</title>
 	
 </head>
-<style type="text/css">
-
 </style>
 <body>
-<h4 style="text-align: center;">Horas Asignadas a los Alumnos</h3>
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+
+  <h4 style="text-align: center">Informacion Alumnos</h4>
+ 
+
+    <nav class="navbar navbar-expand-lg navbar-info" style="background-color: #e3f2fd;">
   
 
 <ul class="navbar-nav">
      <ul class="navbar-nav">
     <li class="nav-item active">
-     <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="Informacion de los Alumnos" >
-      <img src="tiempo-restante.png" height="50" width="50" class="d-inline-block align-top" >
+      <a class="navbar-brand" href="principalAlumnos.html" data-toggle="tooltip" data-placement="top" title="Inicio" >
+      <img src="" height="30" width="30" class="d-inline-block align-top" >
      </a>
 
     </li>
   </ul>
-  </ul>
+</ul>
 <hr>
+<ul class="navbar-nav">
+     <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="navbar-brand" href="newStudent" data-toggle="tooltip" data-placement="top" title="Agregar Alumno">
+      <img src="aaa.ico" height="40" width="40" class="d-inline-block align-top" style="">
+     </a>
+
+    </li>
+  </ul>
+</ul>
+
+<ul class="navbar-nav">
+     <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="navbar-brand" href="newAdmin" data-toggle="tooltip" data-placement="top" title="Agregar Admnistrador">
+      <img src="mas.png" height="30" width="30" class="d-inline-block align-top" >
+     </a>
+
+    </li>
+  </ul>
+</ul>
+<hr>
+
 <ul class="nav justify-content-end">
   <li class="nav-item">
     <a class="nav-link active" href="login">Cerrar Sesión</a>
   </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <form class="form-inline my-2 my-lg-0">
+</ul>
+  </form>
+  </div>
+
+
 </nav>
 <div class="input-group">
-      <input id="buscarAl" type="text" class="form-control" name="buscarAl" placeholder="Buscar Alumnos">
+      <input id="buscarAl" type="text" class="form-control" name="buscarAl" placeholder="Buscar Alumnos" style="font-size: 20px;>
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>   
-    </div>
+       <ul class="navbar-nav">
+     <ul class="navbar-nav">
+    <li class="nav-item active" data-toggle="tooltip" data-placement="top" title="Exportar a PDF">
+      <a class="navbar-brand" href="#">
+      <img src="pdf.png" height="60" width="60" class="d-inline-block align-top" >
+     </a>
 
+    </li>
+  </ul>
+</ul>
+    </div>
 
 
 <nav id="tabla" >
@@ -48,11 +88,11 @@
       </li>
     </ul>
 </nav>
-<div  >      
+<div class="container" >      
   <table class="table table-striped" >
     <thead>
       <tr>
-        <th>Numero de control</th>
+        <th>N. control</th>
         <th>Nombre</th>
         <th>Apellido Paterno </th>
 		<th>Apellido Materno</th>
@@ -62,6 +102,7 @@
 		<th>Fecha</th>
 		<th>Horas</th>
 		<th>Observacion</th>
+    <th>Editar</th>
       </tr>
     </thead>
     <tbody>
@@ -76,6 +117,8 @@
         <td>hola</td>
         <td>hola</td>
         <td>hola</td>
+        <td><a class="navbar-brand" href="addReport" data-toggle="tooltip" data-placement="top" title="Agregar Reporte">
+          <img src="addReport"> </td>
       </tr>
       <tr>
         <td>Mary</td>
@@ -90,6 +133,11 @@
     </tbody>
   </table>
 </div>
+
+
+<i class="fa fa-youtube-play" aria-hidden="true"></i></td>
+
+
 
 
 

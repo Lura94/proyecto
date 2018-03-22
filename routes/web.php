@@ -9,11 +9,9 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 
 Route::get('/nombre', function(){
@@ -45,7 +43,36 @@ Route::get('controller', 'LoginController@index');
 
 
 Route::get('test','TestController@index');
+*/
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
+Route::get('login',function(){
+	return view('login');
+	});
 
+Route::get('principalStudent',function(){
+	return view('principalStudent');
+});
 
+Route::get('principalAdmin',function(){
+	return view('principalAdmin');
+});
+
+Route::get('infoStudent',function(){
+	return view('infoStudent');
+});
+
+Route::get('newStudent',function(){
+	return view('newStudent');
+});
+
+Route::get('newAdmin',function(){
+	return view('newAdmin');
+});
+
+Route::get('addReport',function(){
+	return view('addReport');
+});
