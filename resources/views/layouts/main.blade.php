@@ -48,7 +48,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
 </nav>
 
 
-<h1>Esta pagina es oara los alumnos vean sus horas</h1>
 
     
 

@@ -78,5 +78,5 @@ Route::get('addReport',function(){
 });
 
 Route::get('main',function(){
-	return view('main');
+	return view('layouts/main');
 });
