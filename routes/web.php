@@ -76,3 +76,7 @@ Route::get('newAdmin',function(){
 Route::get('addReport',function(){
 	return view('addReport');
 });
+
+Route::get('main',function(){
+	return view('main');
+});
