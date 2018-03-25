@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use PhpParser\Node\Expr\Empty_;
 
 class User extends Authenticatable
 {
@@ -14,8 +15,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table ="users";
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','phone','id_rollet','curp','grup','grade','specialty','ncontrol'
     ];
 
     /**
@@ -24,6 +26,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','phone'
     ];
+
+    public function roles()
+    {
+        return $this->belongsTo('App\Role','id_rollet','id_rollet');
+    }
+
+    public function setPasswordAttribute($valor)
+    {
+        if (!Empty($valor))
+        {
+            $this->attributes['password'] = \Hash::make($valor);
+        }
+    }
 }

@@ -35,10 +35,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', end
         <a class="nav-link" href="newStudent"><img src="usuario-hombre.png">Registrate<span class="sr-only">(current)</span></a>
       </li>
 
-     
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      
+
        <a class="nav-link" href="login"><img src="login.png">Iniciar Sesion<span class="sr-only">(current)</span></a>
     </form>
     <a href="https://www.facebook.com/Cbta-Altamirano-1492972584347354/">
