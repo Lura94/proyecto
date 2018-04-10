@@ -5,6 +5,7 @@
 
         <div class="col-md-10 center-block">
             <div class="form-group row center-block">
+                <div class="center-block">@include('alerts.request')</div>
                 {!! Form::open(['route' => 'reports.store', 'method' => 'POST']) !!}
                 <input type="hidden" value="{{csrf_token()}}">
                 <div class="form-group row">

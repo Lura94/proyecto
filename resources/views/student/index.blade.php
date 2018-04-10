@@ -35,11 +35,11 @@
                                 <td class="text-center">{{$student->ncontrol}}</td>
                                 <td class="text-center">{{$student->specialty}}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('users.edit', $student->id) }}" title="Editar usuario"
+                                    <a href="{{ route('students.edit', $student->id) }}" title="Editar Alumno"
                                        class="glyphicon glyphicon-edit fa-2x ">
                                     </a>
                                     @if(Auth::user()->id != $student->id)
-                                        <a href="{{ route('users.edit', $student->id) }}" title="Eliminar usuario"
+                                        <a href="{{ route('users.edit', $student->id) }}" title="Eliminar Alumno"
                                            class="glyphicon glyphicon-trash fa-2x text-danger pull-right">
 
                                         </a>

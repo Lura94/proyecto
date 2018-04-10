@@ -27,10 +27,10 @@
                             <td class="text-center">{{$report->signed_hour}}</td>
                             <td class="text-center">{{$report->created_at}}</td>
                             <td class="text-center">
-                                <a href="{{ route('users.edit', $report->id) }}" title="Editar usuario"
+                                <a href="{{ route('reports.edit',$report->id) }}" title="Editar Reporte"
                                    class="glyphicon glyphicon-edit fa-2x ">
                                 </a>
-                                <a href="{{ route('users.edit', $report->id) }}" title="Eliminar usuario"
+                                <a href="{{ route('users.edit', $report->id) }}" title="Eliminar Reporte"
                                    class="glyphicon glyphicon-trash fa-2x text-danger pull-right">
 
                                 </a>

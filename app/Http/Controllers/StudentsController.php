@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReportRequest;
 use App\Role;
 use App\Report;
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\StudentRequest;
 
 class StudentsController extends Controller
 {
@@ -17,7 +19,7 @@ class StudentsController extends Controller
     public function index()
     {
         $students = User::paginate(10);
-        return view('student.index',compact('students'));
+        return view('student.index', compact('students'));
     }
 
     /**
@@ -28,16 +30,16 @@ class StudentsController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('student.create',compact('roles'));
+        return view('student.create', compact('roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
         User::create($request->all());
         return redirect('/students');
@@ -46,35 +48,42 @@ class StudentsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $reports = Report::all();
-        return view('student.student',compact('reports'));
+        // $reports = Report::select("*")->where('id','=',$id);
+        return view('student.student');
+    }
+
+    public function find(Request $request)
+    {
+        $reports = Report::select("reports.*")->join('users','reports.id_student','=','users.id')->where('users.ncontrol','=','13070001')->get();
+       $cantRep = Report::select('reports.*')->join('users','reports.id_student','=','users.id')->where('users.ncontrol','=','13070001')->sum('reports.signed_hour');
+        return view('student.student',compact('reports','cantRep'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $student = User::find($id);
-        return view('student.edit',compact('student'));
+        return view('student.edit', compact('student'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StudentRequest $request, $id)
     {
         $student = User::find($id);
         $student->fill($request->all());
@@ -85,7 +94,7 @@ class StudentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <div class="row">
 
+    <div class="row">
         <div class="col-md-10 center-block">
             <div class="form-group row center-block">
+              <div class="center-block">@include('alerts.request')</div>
                 {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
                 <div class="form-group row">
@@ -17,7 +18,7 @@
                 <div class="form-group row">
                     {!!Form::label('email','Correo:',['class' => 'col-md-1 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::email('email',null,['class'=>'form-control', 'required'=>'required','placeholder' => 'usuario@gmail.com'])!!}
+                        {!!Form::text('email',null,['class'=>'form-control', 'required'=>'required','placeholder' => 'usuario@gmail.com'])!!}
                     </div>
                 </div>
                 <div class="form-group row">
@@ -26,21 +27,11 @@
                         <input type="password" name="password" class="form-control">
                     </div>
                 </div>
-                <div class="form-group row">
-                    {!!Form::label('rol_id','Rol:',['class' => 'col-md-1 col-form-label'])!!}
-                    <div class="col-md-8">
-                        <select name="id_rollet" class="bs-select form-control person"  id="roles_id" required="true">
-                            <option value="0" disabled selected>Selecciona una opción...</option>
-                            @foreach($roles as $role)
-                                <option value="{{$role->id_rollet}}">{{$role->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
+                <input type="hidden" name="id_rollet" value="1">
                 <div class="form-group row">
                     {!!Form::label('rol_id','Telefono:',['class' => 'col-md-1 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('tel',null,['class'=>'form-control','placeholder' => '7676724086'])!!}
+                        {!!Form::text('phone',null,['class'=>'form-control','placeholder' => '7676724086'])!!}
                     </div>
                 </div>
                 <div class="form-group row">

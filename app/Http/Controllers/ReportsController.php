@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Report;
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\ReportRequest;
 
 class ReportsController extends Controller
 {
@@ -36,7 +37,7 @@ class ReportsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReportRequest $request)
     {
         Report::create($request->all());
         return redirect('/reports');
@@ -63,7 +64,8 @@ class ReportsController extends Controller
     public function edit($id)
     {
         $report = Report::find($id);
-        return view('reports.edit',compact('report'));
+        $students = User::all();
+        return view('reports.edit',compact('report','students'));
     }
 
     /**
@@ -73,7 +75,7 @@ class ReportsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ReportRequest $request, $id)
     {
         $report = Report::find($id);
         $report->fill($request->all());
