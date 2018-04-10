@@ -10,26 +10,26 @@
                 <div class="form-group row">
                 {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('ncontrol',null,['class'=>'form-control'])!!}
+                    {!!Form::text('ncontrol',null,['class'=>'form-control','required'=>'required','placeholder' => '130700305423'])!!}
                 </div>
             </div>
             <div class="form-group row">
                 {!!Form::label('rol_id','Nombre:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('name',null,['class'=>'form-control'])!!}
+                    {!!Form::text('name',null,['class'=>'form-control','required'=>'required','placeholder' => 'Jorge Pérez García'])!!}
                 </div>
             </div>
                 <div class="form-group row">
                     {!!Form::label('rol_id','Telefono:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('phone',null,['class'=>'form-control'])!!}
+                        {!!Form::text('phone',null,['class'=>'form-control','placeholder' => '7676724086','cedula' =>  'numeric|required|unique:personas|min:13|max:15',])!!}
                     </div>
                 </div>
                 <input type="hidden" name="id_rollet" value="2">
             <div class="form-group row">
                 {!!Form::label('rol_id','Correo:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('email',null,['class'=>'form-control'])!!}
+                    {!!Form::text('email',null,['class'=>'form-control','required'=>'required','placeholder' => 'alumno@gmail.com'])!!}
                 </div>
             </div>
                 <div class="form-group row">
@@ -41,25 +41,25 @@
                 <div class="form-group row">
                     {!!Form::label('rol_id','Curp:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('curp',null,['class'=>'form-control'])!!}
+                        {!!Form::text('curp',null,['class'=>'form-control','required','placeholder' => 'BADD110313HCMLNS09'])!!}
                     </div>
                 </div>
             <div class="form-group row">
                 {!!Form::label('rol_id','Grupo:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('grup',null,['class'=>'form-control'])!!}
+                    {!!Form::text('grup',null,['class'=>'form-control','required','placeholder' => 'A'])!!}
                 </div>
             </div>
             <div class="form-group row">
                 {!!Form::label('rol_id','Grado:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('grade',null,['class'=>'form-control'])!!}
+                    {!!Form::text('grade',null,['class'=>'form-control','required','placeholder' => '3'])!!}
                 </div>
             </div>
             <div class="form-group row">
                 {!!Form::label('rol_id','Especialidad:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('specialty',null,['class'=>'form-control'])!!}
+                    {!!Form::text('specialty',null,['class'=>'form-control','required','placeholder' => 'TEC. AGROPECUARIO  '])!!}
                 </div>
             </div>
             <div class="form-group row">

@@ -8,14 +8,16 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
                 <div class="form-group row">
                     {!!Form::label('rol_id','Nombre:',['class' => 'col-md-1 col-form-label'])!!}
+                    
                     <div class="col-md-8">
-                        {!!Form::text('name',null,['class'=>'form-control'])!!}
+                        
+                        {!!Form::text('name',null,['class'=>'form-control', 'required'=>'required','placeholder' => ' Jorge Pérez García'])!!}
                     </div>
                 </div>
                 <div class="form-group row">
                     {!!Form::label('email','Correo:',['class' => 'col-md-1 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::email('email',null,['class'=>'form-control'])!!}
+                        {!!Form::email('email',null,['class'=>'form-control', 'required'=>'required','placeholder' => 'usuario@gmail.com'])!!}
                     </div>
                 </div>
                 <div class="form-group row">
@@ -38,7 +40,7 @@
                 <div class="form-group row">
                     {!!Form::label('rol_id','Telefono:',['class' => 'col-md-1 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('phone',null,['class'=>'form-control'])!!}
+                        {!!Form::text('tel',null,['class'=>'form-control','placeholder' => '7676724086'])!!}
                     </div>
                 </div>
                 <div class="form-group row">

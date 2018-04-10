@@ -5,15 +5,19 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default" style="background: snow">
-                    <div class="panel-heading">
-                        <div class="text-center">Iniciar sesion</div>
+                    <div class="panel-heading" style="background: rgb(255,255,255);
+                    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+                    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+                    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );">
+                        <div class="text-center">Iniciar Sesión</div>
 
                     <div class="panel-body">
                         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label"><span class="text-capitalize">Correo electronico</span></label>
+                                <label for="email" class="col-md-4 control-label"><span class="text-capitalize">Correo electronico:</span></label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control" name="email"
@@ -46,7 +50,7 @@
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox"
-                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> Recuerdame
+                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar
                                         </label>
                                     </div>
                                 </div>

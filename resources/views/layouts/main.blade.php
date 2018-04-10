@@ -10,7 +10,7 @@
 
     <title>Cbta 18</title>
   </head>
-  <body background="fondo.png">
+  <body>
 
 
  

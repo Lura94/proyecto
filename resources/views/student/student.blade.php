@@ -7,10 +7,10 @@
             <div class="form-group row center-block">
 
                 <div class="form-group row">
-                    {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label'])!!}
+                    {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label',])!!}
                     <div class="col-md-10">
                         <div class="col-md-3">
-                            {!!Form::text('ncontrol',null,['class'=>'form-control'])!!}
+                            {!!Form::text('ncontrol',null,['class'=>'form-control','placeholder' => '1307003030'])!!}
                         </div>
                        <div class="col-md-2">
                            {!!Form::button('Aceptar',['class' => 'btn btn-primary'])!!}

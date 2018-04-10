@@ -23,25 +23,25 @@
             <div class="form-group row">
                 {!!Form::label('rol_id','Profesor:',['class' => 'col-md-1 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('name_teacher',null,['class'=>'form-control'])!!}
+                    {!!Form::text('name_teacher',null,['class'=>'form-control','required'=>'required','placeholder' => 'Ing. Frumencio Carranza Lorenzo'])!!}
                 </div>
             </div>
             <div class="form-group row">
-                {!!Form::label('rol_id','Razon:',['class' => 'col-md-1 col-form-label'])!!}
+                {!!Form::label('rol_id','Razón:',['class' => 'col-md-1 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('reason',null,['class'=>'form-control'])!!}
+                    {!!Form::text('reason',null,['class'=>'form-control','required'=>'required','placeholder' => 'Honores a la Bandera'])!!}
                 </div>
             </div>
             <div class="form-group row">
                 {!!Form::label('rol_id','Descripcion:',['class' => 'col-md-1 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('description',null,['class'=>'form-control'])!!}
+                    {!!Form::text('description',null,['class'=>'form-control','required'=>'required','placeholder' => 'El alumno estaba haciendo desorden en honores a la bandera '])!!}
                 </div>
             </div>
             <div class="form-group row">
                 {!!Form::label('rol_id','Horas:',['class' => 'col-md-1 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('signed_hour',null,['class'=>'form-control'])!!}
+                    {!!Form::text('signed_hour',null,['class'=>'form-control','required'=>'required','placeholder' => '5'])!!}
                 </div>
             </div>
             <div class="form-group row">

@@ -20,3 +20,12 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+$(function(){
+    var menues = $(".nav li");
+
+    menues.click(function(){
+        menues.removeClass("active");
+        $(this).addClass("active");
+    });
+});
