@@ -40,7 +40,7 @@
                 <div class="form-group row">
                     {!!Form::label('rol_id','Telefono:',['class' => 'col-md-1 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('tel',null,['class'=>'form-control','placeholder' => '7676724086'])!!}
+                        {!!Form::text('phone',null,['class'=>'form-control','placeholder' => '7676724086'])!!}
                     </div>
                 </div>
                 <div class="form-group row">
