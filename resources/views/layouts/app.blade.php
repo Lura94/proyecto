@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
-     
+
+    <!--jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 </head>
 <body style="background: rgb(255,255,255);
@@ -62,21 +63,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         </nav>
         @if(!Auth::guest())
 
-        <nav class="navbar navbar-default sidebar" role="navigation" style="background: rgb(255,255,255);
-        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );" >
+        <nav class="navbar navbar-default sidebar" role="navigation">
             <div class="container-fluid">
                 <div   id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li  class=""><a href="/" >Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                        <li class="home" style="background: cyan"><a href="/" >Home<span style="font-size:16px;" class="pull-right hidden-xs glyphicon glyphicon-home"></span></a></li>
                        @if(Auth::user()->id_rollet != "2")
-                        <li ><a href="{{URL('/users')}}">Usuarios <span ></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-                        <li ><a href="{{URL('/students')}}">Alumnos<span style="font-size:16px;" class="pull-right hidden-xs showopacity  fa fa-graduation-cap"></span></a></li>
-                        <li ><a href="{{URL('/reports')}}">Reportes<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list"></span></a></li>
+                        <li class="users"><a href="{{URL('/users')}}">Usuarios<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-user"></span></a></li>
+                        <li class="students"><a href="{{URL('/students')}}">Alumnos<span style="font-size:16px;" class="pull-right hidden-xs   fa fa-graduation-cap"></span></a></li>
+                        <li class="reports"><a href="{{URL('/reports')}}">Reportes<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-list"></span></a></li>
                        @endif
-                        <li ><a href="{{route('students.show','1')}}">Vista de Alumnos<span style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-group"></span></a></li>
+                        <li class="studentsonly"><a href="{{route('students.show','1')}}">Vista de Alumnos<span style="font-size:16px;" class="pull-right hidden-xs  fa fa-group"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -85,21 +82,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
         @yield('content')
 
     </div>
-    
-
-    <!-- Scripts -->
-    @yield('scripts')
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-
-    <script>$(function(){
-            var menues = $(".nav li");
-        
-            menues.click(function(){
-                menues.removeClass("active");
-                $(this).addClass("active");
-            });
-        });</script>
 </body>
 </html>

@@ -68,18 +68,12 @@
             </div>
         </div>
     </div>
-
-@endsection
-@section('scripts')
     <script type="application/javascript">
-        $(".modalDelete").click(function () {
-            var id = $(this).data("id");
-            var name = $(this).data("name");
-            var NodeName = document.createElement("p");
-            var TextNode = document.createTextNode("¿ Seguro que desea eliminar al usuario " + name + " ?");
-            NodeName.appendChild(TextNode);
-            $(".text").empty();
-            document.getElementsByClassName("text").appendChild(NodeName);
+        $(document).ready(function(){
+            $(".home, .students, .studentsonly, .reports").css("background-color","transparent")
+            $(".users").css("background-color", "cyan");
         });
     </script>
 @endsection
+
+

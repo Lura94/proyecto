@@ -44,4 +44,10 @@
             </div>
         </div>
     </div>
+    <script type="application/javascript">
+        $(document).ready(function(){
+            $(".home, .students, .studentsonly, .users").css("background-color","transparent")
+            $(".reports").css("background-color", "cyan");
+        });
+    </script>
 @endsection

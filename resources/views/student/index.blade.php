@@ -54,4 +54,10 @@
             </div>
         </div>
     </div>
+    <script type="application/javascript">
+        $(document).ready(function(){
+            $(".home, .users, .studentsonly, .reports").css("background-color","transparent")
+            $(".students").css("background-color", "cyan");
+        });
+    </script>
 @endsection
