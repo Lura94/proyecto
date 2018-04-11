@@ -19,7 +19,9 @@
     <!--jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+
 </head>
+
 <body style="background: rgb(255,255,255);
 background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
 background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
@@ -74,6 +76,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
                         <li class="reports"><a href="{{URL('/reports')}}">Reportes<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-list"></span></a></li>
                        @endif
                         <li class="studentsonly"><a href="{{route('students.show','1')}}">Vista de Alumnos<span style="font-size:16px;" class="pull-right hidden-xs  fa fa-group"></span></a></li>
+
                     </ul>
                 </div>
             </div>
