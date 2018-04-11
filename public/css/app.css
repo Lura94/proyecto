@@ -111,6 +111,7 @@ nav.sidebar, .main{
     }
 }
 
+
 nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
     color: #CCC;
     background-color: transparent;
@@ -121,5 +122,63 @@ nav:hover .forAnimate{
 }
 section{
     padding-left: 15px;
+}
+
+.user{
+    background: snow;
+    width: 20%;
+    height: 150px;
+    border: 2px solid black;
+    text-align:center;
+    font-family: Arial;
+    font-size: 25px;
+    margin-left: 18%;
+    transition: 200ms all ease;
+}
+.user a{
+    color: rgb(70,70,70);
+}
+.user:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 3px 3px 3px rgb(20,20,20);
+}
+
+.alumn{
+    background: snow;
+    width:20%;
+    height: 150px;
+    border: 2px solid black;
+    text-align: center;
+    font-family: Arial;
+    font-size: 25px;
+    float: right;
+    margin-right: 7%;
+    transition: 200ms all ease;
+}
+.alumn a{
+    color: rgb(70,70,70);
+}
+.alumn:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 3px 3px 3px rgb(20,20,20);
+}
+
+.report{
+    background: snow;
+    border: 2px solid black;
+    width:20%;
+    margin-right: 8%;
+    text-align: center;
+    height: 150px; float: right;
+    font-family: Arial;
+    font-size: 25px;
+    transition: 200ms all ease;
+}
+.report a{
+    color: rgb(70,70,70);
+}
+.report:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 3px 3px 3px rgb(20,20,20);
 }
 
