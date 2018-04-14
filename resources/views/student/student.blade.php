@@ -6,7 +6,7 @@
             <div class="col-md-10 center-block">
                 <div class="form-group">
 
-                    {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label',])!!}
+                    
 
                     {!! Form::open(['route' => 'students.find', 'method' => 'POST']) !!}
                     {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label', 'required'])!!}
@@ -42,8 +42,8 @@
                 <div class="form-group">
                     <table class="table table-bordered">
                         <thead>
-                        <th class="text-center">Razon</th>
-                        <th class="text-center">Descripcion</th>
+                        <th class="text-center">Razón</th>
+                        <th class="text-center">Descripción</th>
                         <th class="text-center">Horas</th>
                         <th class="text-center">Fecha de reporte</th>
                         </thead>
@@ -67,7 +67,7 @@
     <script type="application/javascript">
         $(document).ready(function(){
             $(".home, .students, .users, .studentsonly, .reports").css("background-color","transparent")
-            $(".studentsonly").css("background-color", "cyan");
+            $(".studentsonly").css("background-color", "rgb(135,224,253)");
         });
     </script>
 @endsection

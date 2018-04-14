@@ -71,9 +71,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
             <div class="container-fluid">
                 <div   id="bs-sidebar-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="home" style="background: cyan"><a href="/" >Home<span style="font-size:16px;" class="pull-right hidden-xs glyphicon glyphicon-home"></span></a></li>
+                        <li class="home" style="background: rgb(135,224,253);"><a href="/" >Inicio<span style="font-size:16px;" class="pull-right hidden-xs glyphicon glyphicon-home"></span></a></li>
                        @if(Auth::user()->id_rollet != "2")
-                        <li class="users"><a href="{{URL('/users')}}">Usuarios<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-user"></span></a></li>
+                        <li class="users" ><a href="{{URL('/users')}}">Usuarios<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-user"></span></a></li>
                         <li class="students"><a href="{{URL('/students')}}">Alumnos<span style="font-size:16px;" class="pull-right hidden-xs   fa fa-graduation-cap"></span></a></li>
                         <li class="reports"><a href="{{URL('/reports')}}">Reportes<span style="font-size:16px;" class="pull-right hidden-xs  glyphicon glyphicon-list"></span></a></li>
                        @endif

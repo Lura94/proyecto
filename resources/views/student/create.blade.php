@@ -9,7 +9,7 @@
                 {!! Form::open(['route' => 'students.store', 'method' => 'POST']) !!}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
                 <div class="form-group row">
-                {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label'])!!}
+                {!!Form::label('rol_id','Número de control:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
                     {!!Form::text('ncontrol',null,['class'=>'form-control','required'=>'required','placeholder' => '130700305423'])!!}
                 </div>
@@ -21,7 +21,7 @@
                 </div>
             </div>
                 <div class="form-group row">
-                    {!!Form::label('rol_id','Telefono:',['class' => 'col-md-2 col-form-label'])!!}
+                    {!!Form::label('rol_id','Teléfono:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
                         {!!Form::text('phone',null,['class'=>'form-control','placeholder' => '7676724086','cedula' =>  'numeric|required|unique:personas|min:13|max:15',])!!}
                     </div>

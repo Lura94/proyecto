@@ -70,7 +70,7 @@
     <script type="application/javascript">
         $(document).ready(function(){
             $(".home, .students, .studentsonly, .users").css("background-color","transparent")
-            $(".reports").css("background-color", "cyan");
+            $(".reports").css("background-color", "rgb(135,224,253)");
 
         });
 
@@ -97,5 +97,7 @@
                 }
             });
         }
+        
     </script>
+    
 @endsection

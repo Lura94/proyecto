@@ -73,7 +73,7 @@
     <script type="application/javascript">
         $(document).ready(function(){
             $(".home, .students, .studentsonly, .reports").css("background-color","transparent")
-            $(".users").css("background-color", "cyan");
+            $(".users").css("background-color", "rgb(135,224,253)");
         });
 
         $(".modalDelete").click(function(){

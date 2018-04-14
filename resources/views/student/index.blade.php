@@ -17,7 +17,7 @@
                     <th class="text-center">Curp</th>
                     <th class="text-center">Grado</th>
                     <th class="text-center">email</th>
-                    <th class="text-center">Telefono</th>
+                    <th class="text-center">Teléfono</th>
                     <th class="text-center">Grupo</th>
                     <th class="text-center">Numero de control</th>
                     <th class="text-center">Especialidad</th>
@@ -80,7 +80,7 @@
     <script type="application/javascript">
         $(document).ready(function(){
             $(".home, .users, .studentsonly, .reports").css("background-color","transparent")
-            $(".students").css("background-color", "cyan");
+            $(".students").css("background-color", "rgb(135,224,253)");
         });
 
         $(".modalDelete").click(function(){
