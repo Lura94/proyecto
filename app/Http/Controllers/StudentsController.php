@@ -61,9 +61,10 @@ class StudentsController extends Controller
 
     public function find(Request $request)
     {
-        $reports = Report::select("reports.*")->join('users','reports.id_student','=','users.id')->where('users.ncontrol','=','13070001')->get();
-       $cantRep = Report::select('reports.*')->join('users','reports.id_student','=','users.id')->where('users.ncontrol','=','13070001')->sum('reports.signed_hour');
-        return view('student.student',compact('reports','cantRep'));
+        $reports = Report::select("reports.*")->join('users','reports.id_student','=','users.id')->where('users.ncontrol','=',$request->ncontrol)->get();
+        $cantRep = Report::select('reports.*')->join('users','reports.id_student','=','users.id')->where('users.ncontrol','=',$request->ncontrol)->sum('reports.signed_hour');
+        $idStudent = User::select('id')->where('ncontrol','=',$request->ncontrol)->first();
+        return view('student.student',compact('reports','cantRep','idStudent'));
     }
 
     /**

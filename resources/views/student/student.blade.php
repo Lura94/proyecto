@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-
-        <div class="col-md-10 center-block">
-            <div class="form-group row center-block">
-
-                <div class="form-group row">
+    <div class="form-body center-block">
+        <div class="row">
+            <div class="col-md-10 center-block">
+                <div class="form-group">
 
                     {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label',])!!}
 
@@ -20,20 +18,28 @@
                             {!! Form::submit('Aceptar',['class' => 'btn btn-primary']) !!}
                         </div>
                         <div class="col-md-3">
-                            <div class="form-group row">
+                            <div class="form-group">
                                 {!!Form::label('rol_id','Horas deuda:',['class' => 'col-md-6 col-form-label'])!!}
                                 <div class="col-md-5">
                                     @if(isset($cantRep))
                                         {!!Form::text('hours_signed', $cantRep ,['class'=>'form-control','readonly'])!!}
                                     @endif
                                 </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if(isset($idStudent))
+                                <a href="{{URL::to("reports/export/".$idStudent->id)}}" class="btn btn-primary" style="float: right">Exportar</a>
+                                @endif
                             </div>
                         </div>
                     </div>
                     {!! Form::close() !!}
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group">
                     <table class="table table-bordered">
                         <thead>
                         <th class="text-center">Razon</th>
