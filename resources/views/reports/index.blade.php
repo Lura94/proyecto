@@ -4,6 +4,7 @@
     <div class="form-body center-block">
         <div class="row">
             <div class="col-md-10 center-block">
+                @include('alerts.success')
                 <div class="form-group">
                     <a href="{{URL('/reports/create')}}" class="btn btn-primary pull-right" style="margin-bottom: 10px"><li class="glyphicon glyphicon-plus"></li> Nuevo reporte</a>
                 </div>
@@ -28,11 +29,11 @@
                             <td class="text-center">{{$report->created_at}}</td>
                             <td class="text-center">
                                 <a href="{{ route('reports.edit',$report->id) }}" title="Editar Reporte"
-                                   class="glyphicon glyphicon-edit fa-2x ">
+                                   class="btn glyphicon glyphicon-edit fa-2x ">
                                 </a>
-                                <a href="{{ route('users.edit', $report->id) }}" title="Eliminar Reporte"
-                                   class="glyphicon glyphicon-trash fa-2x text-danger pull-right">
-
+                                <a href="#exampleModal" data-toggle="modal"
+                                   data-id="{{ $report->id }}" title="Eliminar"
+                                   class="btn glyphicon glyphicon-trash fa-2x text-danger pull-right modalDelete">
                                 </a>
                             </td>
                         </tr>
@@ -44,10 +45,57 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Eliminar Reporte</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="bodyDelete">
+
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" value="{{csrf_token()}}" name="_token" id="token">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteReport()">Aceptar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="application/javascript">
         $(document).ready(function(){
             $(".home, .students, .studentsonly, .users").css("background-color","transparent")
             $(".reports").css("background-color", "cyan");
+
         });
+
+        $(".modalDelete").click(function(){
+            id = $(this).data("id");
+            var nodeName=document.createElement("p");
+            var nameNode=document.createTextNode("¿Seguro que desea eliminar el reporte ?");
+            nodeName.appendChild(nameNode);
+            $("#bodyDelete").empty();
+            document.getElementById("bodyDelete").appendChild(nodeName);
+        });
+
+        function deleteReport() {
+            var user_id = id;
+            var token = $("#token").val();
+
+            $.ajax({
+               url: "reports/"+user_id+"",
+                headers: {"x-CSRF-TOKEN": token},
+                type: "DELETE",
+                success: function () {
+                    window.location = "/reports";
+                    $("#message").fadeIn();
+                }
+            });
+        }
     </script>
 @endsection

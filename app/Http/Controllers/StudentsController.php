@@ -8,6 +8,7 @@ use App\Report;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\StudentRequest;
+use Illuminate\Support\Facades\Session;
 
 class StudentsController extends Controller
 {
@@ -42,6 +43,7 @@ class StudentsController extends Controller
     public function store(StudentRequest $request)
     {
         User::create($request->all());
+        Session::flash('message','El alumno se creo exitosamente');
         return redirect('/students');
     }
 
@@ -88,6 +90,7 @@ class StudentsController extends Controller
         $student = User::find($id);
         $student->fill($request->all());
         $student->save();
+        Session::flash('message','El alumno se actualiso exitosamente');
         return redirect('/students');
     }
 
@@ -101,6 +104,6 @@ class StudentsController extends Controller
     {
         $student = User::find($id);
         $student->delete();
-        return redirect('/students');
+        Session::flash('message','El alumno fue eliminado correctamente');
     }
 }

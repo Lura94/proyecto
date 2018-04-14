@@ -4,6 +4,7 @@
     <div class="form-body center-block">
         <div class="row">
             <div class="col-md-10 center-block">
+                @include('alerts.success')
                 <div class="form-group">
                     <a href="{{URL('/users/create')}}" class="btn btn-primary pull-right" style="margin-bottom: 10px">
                         <li class="glyphicon glyphicon-plus"></li>
@@ -28,12 +29,12 @@
                                 <td class="text-center">
                                     @if(Auth::user()->id != $user->id && Auth::user()->rolet != 1)
                                         <a href="{{ route('users.edit', $user->id) }}" title="Editar usuario"
-                                           class="glyphicon glyphicon-edit fa-2x ">
+                                           class="btn glyphicon glyphicon-edit fa-2x ">
                                         </a>
-                                        <a data-toggle="modal" data-target="#exampleModal" data-name="{{$user->name}}"
-                                           data-id="{{$user->id}}" title="Eliminar usuario"
-                                           class="glyphicon glyphicon-trash fa-2x text-danger pull-right modalDelete">
 
+                                        <a href="#exampleModal" data-toggle="modal" data-name="{{ $user->name }}"
+                                           data-id="{{ $user->id }}" title="Eliminar"
+                                           class="btn glyphicon glyphicon-trash fa-2x text-danger pull-right modalDelete">
                                         </a>
                                     @endif
                                 </td>
@@ -58,12 +59,13 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body text">
+                <div class="modal-body" id="bodyDelete">
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <input type="hidden" value="{{csrf_token()}}" name="_token" id="token">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="deleteUser()">Aceptar</button>
+                    <button type="button" class="btn btn-danger " data-dismiss="modal"></i>Cancelar</button>
                 </div>
             </div>
         </div>
@@ -73,6 +75,31 @@
             $(".home, .students, .studentsonly, .reports").css("background-color","transparent")
             $(".users").css("background-color", "cyan");
         });
+
+        $(".modalDelete").click(function(){
+            id = $(this).data("id");
+            var name = $(this).data("name");
+            var nodeName=document.createElement("p");
+            var nameNode=document.createTextNode("¿Seguro que desea eliminar el usuario "+name+"?");
+            nodeName.appendChild(nameNode);
+            $("#bodyDelete").empty();
+            document.getElementById("bodyDelete").appendChild(nodeName);
+        });
+        function deleteUser() {
+                var token = $("#token").val();
+                var user_id = id;
+
+                $.ajax({
+                    url: "users/"+id+"",
+                    headers: {'X-CSRF-TOKEN': token},
+                    type: "DELETE",
+                    success: function() {
+                        window.location = "/users";
+                        $("#message").fadeIn();
+                    }
+                });
+
+        }
     </script>
 @endsection
 

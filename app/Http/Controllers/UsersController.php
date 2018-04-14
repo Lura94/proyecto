@@ -6,6 +6,8 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Session;
+
 class UsersController extends Controller
 {
     /**
@@ -39,6 +41,7 @@ class UsersController extends Controller
     public function store(UserRequest $request)
     {
         User::create($request->all());
+        Session::flash('message','El usuario se registro exitosamente');
         return redirect('/users');
     }
 
@@ -78,6 +81,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->fill($request->all());
         $user->save();
+        Session::flash('message','El usuario se modifico exitosamente');
         return redirect('/users');
     }
 
@@ -91,6 +95,7 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('/users');
+
+        Session::flash('message','El usuario se elimino correctamente');
     }
 }

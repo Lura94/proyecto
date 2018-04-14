@@ -37,8 +37,8 @@ class UserRequest extends FormRequest
                 return [
                     'name' => 'required|max:255',
                     'email' => 'required|email|max:255|unique:users,email,'.$this->get('id'),
-                    'password' => 'required|max:255|min:9',
-                    'password_confirm' => 'same:password|required|min:9|max:255',
+                    'password' => 'max:255',
+                    'password_confirm' => 'same:password|max:255',
                     'phone' => 'required',
                 ];
                 break;

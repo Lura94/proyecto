@@ -6,6 +6,7 @@ use App\Report;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReportRequest;
+use Illuminate\Support\Facades\Session;
 
 class ReportsController extends Controller
 {
@@ -40,6 +41,7 @@ class ReportsController extends Controller
     public function store(ReportRequest $request)
     {
         Report::create($request->all());
+        Session::flash('message','El Reporte fue creado correctamente');
         return redirect('/reports');
 
     }
@@ -80,6 +82,7 @@ class ReportsController extends Controller
         $report = Report::find($id);
         $report->fill($request->all());
         $report->save();
+        Session::flash('message','El Reporte fue actualizado correctamente');
         return redirect('/reports');
     }
 
@@ -93,6 +96,6 @@ class ReportsController extends Controller
     {
         $report = Report::find($id);
         $report->delete();
-        return redirect('/reports');
+        Session::flash('message','Reporte eliminado correctamente');
     }
 }

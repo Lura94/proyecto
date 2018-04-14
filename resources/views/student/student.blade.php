@@ -24,7 +24,7 @@
                                 {!!Form::label('rol_id','Horas deuda:',['class' => 'col-md-6 col-form-label'])!!}
                                 <div class="col-md-5">
                                     @if(isset($cantRep))
-                                        {!!Form::text('ncontrol',$cantRep,['class'=>'form-control','readonly'])!!}
+                                        {!!Form::text('hours_signed', $cantRep ,['class'=>'form-control','readonly'])!!}
                                     @endif
                                 </div>
                             </div>
