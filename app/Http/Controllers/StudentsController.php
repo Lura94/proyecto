@@ -7,6 +7,8 @@ use App\Role;
 use App\Report;
 use Illuminate\Http\Request;
 use App\User;
+use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StudentRequest;
 use Illuminate\Support\Facades\Session;
 
@@ -106,5 +108,38 @@ class StudentsController extends Controller
         $student = User::find($id);
         $student->delete();
         Session::flash('message','El alumno fue eliminado correctamente');
+    }
+    public function export()
+    {
+        $students = User::select('users.*')->where('id_rollet','=','2')->get();
+
+        $student_excel = [];
+        foreach ($students as $student) {
+            $aux = [
+                'student' =>$student->name,
+                'ncontrol' => $student->ncontrol,
+                'curp' => $student->curp,
+                'grado' => $student->grade,
+                'email' => $student->email,
+                'phone' => $student->phone,
+                'group' => $student->grup,
+                'especiality' => $student->specialty,
+                'created_at' => Carbon::parse($student->created_At)->format('d-m-Y')
+            ];
+            array_push($student_excel,$aux);
+
+        }
+        $headers = array('PROFESOR', 'RASON', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+
+        array_unshift($student_excel, $headers);
+        ob_start();
+        ob_clean();
+
+        Excel::create('Reporte', function ($excel) use ($student_excel) {
+            $excel->sheet('Listado', function ($sheet) use ($student_excel) {
+                $sheet->fromArray($student_excel, null, 'A1', false, false);
+            });
+        })->export('xls');
+
     }
 }

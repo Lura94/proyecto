@@ -6,7 +6,12 @@
             <div class="col-md-10 center-block">
                 @include('alerts.success')
                 <div class="form-group">
-                    <a href="{{URL('/reports/create')}}" class="btn btn-primary pull-right" style="margin-bottom: 10px"><li class="glyphicon glyphicon-plus"></li> Nuevo reporte</a>
+                    <a href="{{URL::to('reports/exportAll')}}" title="Exportar" class="btn btn-primary pull-right" style="margin-left: 10px">Exportar</a>
+                    <a href="{{URL('/reports/create')}}" title="Nuevo reporte" class="btn btn-primary pull-right" style="margin-bottom: 10px">
+                        <li class="glyphicon glyphicon-plus"></li>
+                        Nuevo reporte</a>
+                    <input type="text" class="control-label" id="filter" placeholder="Filtrar Por Alumno">
+                    <a href="{{URL('reports/filter')}}" class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</a>
                 </div>
                 <table class="table table-bordered">
                     <thead>
@@ -61,23 +66,26 @@
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" value="{{csrf_token()}}" name="_token" id="token">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteReport()">Aceptar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="deleteReport()">Aceptar
+                    </button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
     <script type="application/javascript">
+
         $(document).ready(function(){
             $(".home, .students, .studentsonly, .users").css("background-color","transparent")
             $(".reports").css("background-color", "rgb(135,224,253)");
 
+
         });
 
-        $(".modalDelete").click(function(){
+        $(".modalDelete").click(function () {
             id = $(this).data("id");
-            var nodeName=document.createElement("p");
-            var nameNode=document.createTextNode("¿Seguro que desea eliminar el reporte ?");
+            var nodeName = document.createElement("p");
+            var nameNode = document.createTextNode("¿Seguro que desea eliminar el reporte ?");
             nodeName.appendChild(nameNode);
             $("#bodyDelete").empty();
             document.getElementById("bodyDelete").appendChild(nodeName);
@@ -88,7 +96,7 @@
             var token = $("#token").val();
 
             $.ajax({
-               url: "reports/"+user_id+"",
+                url: "reports/" + user_id + "",
                 headers: {"x-CSRF-TOKEN": token},
                 type: "DELETE",
                 success: function () {
@@ -97,7 +105,8 @@
                 }
             });
         }
-        
+
+
     </script>
     
 @endsection

@@ -6,10 +6,15 @@
             <div class="col-md-10 center-block">
                 @include('alerts.success')
                 <div class="form-group">
+                    <a href="{{URL('students/export')}}" class="btn btn-primary pull-right" style="margin-left: 10px">Exportar</a>
                     <a href="{{URL('/students/create')}}" class="btn btn-primary pull-right"
                        style="margin-bottom: 10px">
                         <li class="glyphicon glyphicon-plus"></li>
                         Nuevo Estudiante</a>
+                    <input type="text" class="control-label" id="filter" placeholder="Filtrar Por Nombre">
+                    <a href="{{URL('students/filter')}}" class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</a>
+
+
                 </div>
                 <table class="table table-bordered">
                     <thead>
@@ -105,7 +110,7 @@
                     $("#message").fadeIn();
                 }
             });
-
         }
+
     </script>
 @endsection

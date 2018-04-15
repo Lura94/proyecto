@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Http\Requests\ReportRequest;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
+use Helper;
 
 class ReportsController extends Controller
 {
@@ -113,7 +114,7 @@ class ReportsController extends Controller
                 'signed_hour' => $report->signed_hour,
                 'created_at' => Carbon::parse($report->created_at)->format("d-m-Y")
             ];
-            array_push($reports_excel,$aux);
+            array_push($reports_excel, $aux);
         }
 
         $headers = array('PROFESOR', 'RASON', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
@@ -122,9 +123,39 @@ class ReportsController extends Controller
         ob_start();
         ob_clean();
 
-        Excel::create('Reporte', function($excel) use($reports_excel){
-            $excel->sheet('Listado', function($sheet)use($reports_excel){
-                $sheet-> fromArray($reports_excel, null, 'A1', false, false);
+        Excel::create('Reporte', function ($excel) use ($reports_excel) {
+            $excel->sheet('Listado', function ($sheet) use ($reports_excel) {
+                $sheet->fromArray($reports_excel, null, 'A1', false, false);
+            });
+        })->export('xls');
+
+    }
+
+    public function exportAll()
+    {
+        $reports = Report::all();
+
+        $report_excel = [];
+        foreach ($reports as $report) {
+            $aux = [
+                'student' => Helper::getStudentName($report->id_student)->name,
+                'name_teacher' => $report->name_teacher,
+                'reason' => $report->reason,
+                'description' => $report->description,
+                'created_at' => Carbon::parse($report->created_At)->format('d-m-Y')
+            ];
+            array_push($report_excel,$aux);
+
+        }
+        $headers = array('PROFESOR', 'RASON', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+
+        array_unshift($report_excel, $headers);
+        ob_start();
+        ob_clean();
+
+        Excel::create('Reporte', function ($excel) use ($report_excel) {
+            $excel->sheet('Listado', function ($sheet) use ($report_excel) {
+                $sheet->fromArray($report_excel, null, 'A1', false, false);
             });
         })->export('xls');
 

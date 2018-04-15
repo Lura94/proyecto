@@ -6,8 +6,6 @@
             <div class="col-md-10 center-block">
                 <div class="form-group">
 
-                    
-
                     {!! Form::open(['route' => 'students.find', 'method' => 'POST']) !!}
                     {!!Form::label('rol_id','Numero de control:',['class' => 'col-md-2 col-form-label', 'required'])!!}
                     <div class="col-md-10">
@@ -16,30 +14,31 @@
                         </div>
                         <div class="col-md-2">
                             {!! Form::submit('Aceptar',['class' => 'btn btn-primary']) !!}
+                            {!! Form::close() !!}
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                {!!Form::label('rol_id','Horas deuda:',['class' => 'col-md-6 col-form-label'])!!}
+                                {!!Form::label('rol_id','Total de Horas:',['class' => 'col-md-6 col-form-label'])!!}
                                 <div class="col-md-5">
-                                    @if(isset($cantRep))
-                                        {!!Form::text('hours_signed', $cantRep ,['class'=>'form-control','readonly'])!!}
-                                    @endif
+                                    @if(isset($cantRep) && $cantRep !=0)
+                                            <label for="" class="form-control">{{$cantRep}}</label>
+                                       @endif
                                 </div>
 
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                @if(isset($idStudent))
+                                @if(isset($idStudent) && $reports !=null)
                                 <a href="{{URL::to("reports/export/".$idStudent->id)}}" class="btn btn-primary" style="float: right">Exportar</a>
                                 @endif
                             </div>
                         </div>
                     </div>
-                    {!! Form::close() !!}
+
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" style="margin-top: 50px">
                     <table class="table table-bordered">
                         <thead>
                         <th class="text-center">Razón</th>

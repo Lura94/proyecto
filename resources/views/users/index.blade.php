@@ -9,8 +9,12 @@
                     <a href="{{URL('/users/create')}}" class="btn btn-primary pull-right" style="margin-bottom: 10px">
                         <li class="glyphicon glyphicon-plus"></li>
                         Nuevo usuario</a>
+                    {{Form::open(["route" => "users.filter", "method" => "POST"])}}
+                    <input type="text" name="filter" class="control-label" id="filter" placeholder="Filtrar Por Nombre">
+                    <button type="submit"  class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</button>
+                    {{Form::close()}}
                 </div>
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="sample_editable_1">
                     <thead>
                     <th class="text-center">Nombre</th>
                     <th class="text-center">Telefono</th>
@@ -98,8 +102,9 @@
                         $("#message").fadeIn();
                     }
                 });
-
         }
+
+
     </script>
 @endsection
 

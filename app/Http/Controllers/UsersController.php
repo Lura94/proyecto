@@ -6,6 +6,7 @@ use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Session;
 
 class UsersController extends Controller
@@ -97,5 +98,11 @@ class UsersController extends Controller
         $user->delete();
 
         Session::flash('message','El usuario se elimino correctamente');
+    }
+
+    public function filter(Request $request)
+    {
+        $users = User::select("users.*")->where('name','like','%'.$request->filter.'%')->paginate(10);
+        return view('users.index',compact('users'));
     }
 }

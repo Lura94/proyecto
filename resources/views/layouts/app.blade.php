@@ -30,14 +30,10 @@ background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229
 background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );">
     <div id="app">
-        <nav class="navbar navbar-default" style="background: rgb(255,255,255);
-        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );">
+        <nav class="navbar navbar-default" style="background: whitesmoke;">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Cbta</a>
+                    <a class="navbar-brand" href="/">Cbta</a>
                 </div>
                 @if(!Auth::guest())
                     <ul class="nav navbar-nav pull-right">
