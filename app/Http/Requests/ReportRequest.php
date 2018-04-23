@@ -31,7 +31,7 @@ class ReportRequest extends FormRequest
                     'name_teacher' => 'required|max:255',
                     'reason' => 'required',
                     'description' => 'required',
-                    'signed_hour' => 'required',
+                    'signed_hour' => 'required|numeric|min:1',
                 ];
                 break;
             case 'PUT':
@@ -40,7 +40,7 @@ class ReportRequest extends FormRequest
                     'name_teacher' => 'required|max:255',
                     'reason' => 'required',
                     'description' => 'required',
-                    'signed_hour' => 'required',
+                    'signed_hour' => 'required|numeric|min:1',
                 ];
                 break;
         }

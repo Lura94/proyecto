@@ -65,6 +65,24 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    {!!Form::label('rol_id','IMSS:',['class' => 'col-md-2 col-form-label'])!!}
+                    <div class="col-md-8">
+                        {!!Form::text('imss',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    {!!Form::label('rol_id','Tutor:',['class' => 'col-md-2 col-form-label'])!!}
+                    <div class="col-md-8">
+                        {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    {!!Form::label('rol_id','Telefono Tutor:',['class' => 'col-md-2 col-form-label'])!!}
+                    <div class="col-md-8">
+                        {!!Form::text('phoneTutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                    </div>
+                </div>
+                <div class="form-group row">
                     {!!Form::label('rol_id','Especialidad:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
                         {!!Form::text('specialty',null,['class'=>'form-control'])!!}

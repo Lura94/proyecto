@@ -19,7 +19,7 @@
                 <div class="col-md-8">
                     {!!Form::text('name',null,['class'=>'form-control','required'=>'required','placeholder' => 'Jorge Pérez García'])!!}
                 </div>
-            </div>
+            </div> 
                 <div class="form-group row">
                     {!!Form::label('rol_id','Teléfono:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
@@ -57,6 +57,27 @@
                     {!!Form::text('grade',null,['class'=>'form-control','required','placeholder' => '3'])!!}
                 </div>
             </div>
+
+            <div class="form-group row">
+                {!!Form::label('rol_id','Imss:',['class' => 'col-md-2 col-form-label'])!!}
+                <div class="col-md-8">
+                    {!!Form::text('imms',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                </div>
+            </div>
+            <div class="form-group row">
+                {!!Form::label('rol_id','Tutor:',['class' => 'col-md-2 col-form-label'])!!}
+                <div class="col-md-8">
+                    {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                </div>
+            </div>
+            <div class="form-group row">
+                {!!Form::label('rol_id','Telefono Tutor:',['class' => 'col-md-2 col-form-label'])!!}
+                <div class="col-md-8">
+                    {!!Form::text('phoneTutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                </div>
+            </div>
+
+
             <div class="form-group row">
                 {!!Form::label('rol_id','Especialidad:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">

@@ -24,9 +24,14 @@
                     <th class="text-center">email</th>
                     <th class="text-center">Teléfono</th>
                     <th class="text-center">Grupo</th>
-                    <th class="text-center">Numero de control</th>
+                    <th class="text-center">N control</th>
                     <th class="text-center">Especialidad</th>
+                    <th class="text-center">IMSS</th>
+                    <th class="text-center">Tutor</th>
+                    <th class="text-center">Telefono Tutor</th>
+
                     <th class="text-center">Operaciones</th>
+                    
                     </thead>
                     <tbody>
                     @foreach($students as $student)
@@ -40,6 +45,9 @@
                                 <td class="text-center">{{$student->grup}}</td>
                                 <td class="text-center">{{$student->ncontrol}}</td>
                                 <td class="text-center">{{$student->specialty}}</td>
+                                <td class="text-center">{{$student->imms}}</td>
+                                <td class="text-center">{{$student->tutor}}</td>
+                                <td class="text-center">{{$student->phoneTutor}}</td>
                                 <td class="text-center">
                                     <a href="{{ route('students.edit', $student->id) }}" title="Editar Alumno"
                                        class="btn glyphicon glyphicon-edit fa-2x ">

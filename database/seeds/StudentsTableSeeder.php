@@ -22,6 +22,9 @@ class StudentsTableSeeder extends Seeder
                 'ncontrol' => '12070043',
                 'last_name' => 'Perez',
                 'last_name2' => 'Castro',
+                'imss'=> '586974523',
+                'tutor' => 'Mario Gomez',
+                'phoneTutor' => '865478974',
                 'specialty' => 'DBA'
             ),
         ));

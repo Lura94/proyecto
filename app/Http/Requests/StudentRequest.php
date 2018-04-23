@@ -29,10 +29,10 @@ class StudentRequest extends FormRequest
                 return [
                     'name' => 'required|max:255',
                     'curp' => 'required',
-                    'grade' => 'required',
+                    'grade' => 'required|numeric|max:6',
                     'email' => 'required|email|unique:users',
                     'password' => 'required|min:9',
-                    'grup' => 'required',
+                    'grup' => 'required|alpha|max:1',
                     'phone' => 'required',
                     'ncontrol' => 'required',
                     'specialty' => 'required'
@@ -43,11 +43,11 @@ class StudentRequest extends FormRequest
                 return [
                     'name' => 'required|max:255',
                     'curp' => 'required',
-                    'grade' => 'required',
+                    'grade' => 'required|numeric|max:6',
                     'email' => 'required|email|unique:users,email,'.$this->get('id'),
                     'password' => 'max:255',
                     'password_confirm' => 'max:255|same:password',
-                    'grup' => 'required',
+                    'grup' => 'required|alpha|max:1',
                     'phone' => 'required',
                     'ncontrol' => 'required',
                     'specialty' => 'required'

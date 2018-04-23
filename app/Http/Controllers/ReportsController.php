@@ -117,7 +117,7 @@ class ReportsController extends Controller
             array_push($reports_excel, $aux);
         }
 
-        $headers = array('PROFESOR', 'RASON', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+        $headers = array('PROFESOR', 'RAZÓN', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
 
         array_unshift($reports_excel, $headers);
         ob_start();
@@ -147,7 +147,7 @@ class ReportsController extends Controller
             array_push($report_excel,$aux);
 
         }
-        $headers = array('PROFESOR', 'RASON', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+        $headers = array('PROFESOR', 'RAZÓN', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
 
         array_unshift($report_excel, $headers);
         ob_start();

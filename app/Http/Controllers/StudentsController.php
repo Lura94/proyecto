@@ -93,7 +93,7 @@ class StudentsController extends Controller
         $student = User::find($id);
         $student->fill($request->all());
         $student->save();
-        Session::flash('message','El alumno se actualiso exitosamente');
+        Session::flash('message','El alumno se actualizó exitosamente');
         return redirect('/students');
     }
 
@@ -109,6 +109,8 @@ class StudentsController extends Controller
         $student->delete();
         Session::flash('message','El alumno fue eliminado correctamente');
     }
+  
+
     public function export()
     {
         $students = User::select('users.*')->where('id_rollet','=','2')->get();
