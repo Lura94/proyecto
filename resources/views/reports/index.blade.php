@@ -10,8 +10,10 @@
                     <a href="{{URL('/reports/create')}}" title="Nuevo reporte" class="btn btn-primary pull-right" style="margin-bottom: 10px">
                         <li class="glyphicon glyphicon-plus"></li>
                         Nuevo reporte</a>
-                    <input type="text" class="control-label" id="filter" placeholder="Filtrar Por Alumno">
-                    <a href="{{URL('reports/filter')}}" class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</a>
+                    {{Form::open(["route" => "reports.filter", "method" => "POST"])}}
+                    <input type="text" name="filter" class="control-label" id="filter" placeholder="Filtrar Por Profesor">
+                    <button type="submit"  class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</button>
+                    {{Form::close()}}
                 </div>
                 <table class="table table-bordered">
                     <thead>

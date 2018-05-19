@@ -35,7 +35,10 @@ class StudentRequest extends FormRequest
                     'grup' => 'required|alpha|max:1',
                     'phone' => 'required',
                     'ncontrol' => 'required',
-                    'specialty' => 'required'
+                    'specialty' => 'required',
+                    'tutor' => 'required',
+                    'phoneTutor' => 'required',
+                    'imss' => 'required'
 
                 ];
                 break;
@@ -50,7 +53,10 @@ class StudentRequest extends FormRequest
                     'grup' => 'required|alpha|max:1',
                     'phone' => 'required',
                     'ncontrol' => 'required',
-                    'specialty' => 'required'
+                    'specialty' => 'required',
+                    'tutor' => 'required',
+                    'phoneTutor' => 'required',
+                    'imss' => 'required'
 
                 ];
                 break;

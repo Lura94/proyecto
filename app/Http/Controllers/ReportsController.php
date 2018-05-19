@@ -9,6 +9,7 @@ use App\Http\Requests\ReportRequest;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 use Helper;
+use Illuminate\Http\Request;
 
 class ReportsController extends Controller
 {
@@ -19,7 +20,7 @@ class ReportsController extends Controller
      */
     public function index()
     {
-        $reports = Report::paginate(10);
+        $reports = Report::paginate(6);
         return view('reports.index', compact('reports'));
     }
 
@@ -159,5 +160,11 @@ class ReportsController extends Controller
             });
         })->export('xls');
 
+    }
+
+    public function filter(Request $request)
+    {
+        $reports = Report::select("reports.*")->where([['name_teacher','like','%'.$request->filter.'%']])->paginate(10);
+        return view('reports.index',compact('reports'));
     }
 }

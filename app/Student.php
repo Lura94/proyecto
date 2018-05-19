@@ -8,6 +8,6 @@ class Student extends Model
 {
     protected $table="students";
     protected $fillable=[
-        'curp','email','name','grade','group','last_name','last_name2','ncontrol','password','specialty'
+        'curp','email','name','grade','group','last_name','last_name2','ncontrol','password','specialty','imss','phoneTutor','tutor'
     ];
 }

@@ -61,17 +61,17 @@
             <div class="form-group row">
                 {!!Form::label('rol_id','Imss:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('imms',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                    {!!Form::text('imss',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
                 </div>
             </div>
             <div class="form-group row">
-                {!!Form::label('rol_id','Tutor:',['class' => 'col-md-2 col-form-label'])!!}
+                {!!Form::label('tutor','Tutor:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
                     {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
                 </div>
             </div>
             <div class="form-group row">
-                {!!Form::label('rol_id','Telefono Tutor:',['class' => 'col-md-2 col-form-label'])!!}
+                {!!Form::label('phone','Telefono Tutor:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
                     {!!Form::text('phoneTutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
                 </div>
@@ -94,5 +94,5 @@
             </div>
         </div>
     </div>
-
+    </div>
 @endsection

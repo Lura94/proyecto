@@ -11,9 +11,10 @@
                        style="margin-bottom: 10px">
                         <li class="glyphicon glyphicon-plus"></li>
                         Nuevo Estudiante</a>
-                    <input type="text" class="control-label" id="filter" placeholder="Filtrar Por Nombre">
-                    <a href="{{URL('students/filter')}}" class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</a>
-
+                     {{Form::open(["route" => "students.filter", "method" => "POST"])}}
+                    <input type="text" name="filter" class="control-label" id="filter" placeholder="Filtrar Por Nombre">
+                    <button type="submit"  class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</button>
+                    {{Form::close()}}
 
                 </div>
                 <table class="table table-bordered">
@@ -45,7 +46,7 @@
                                 <td class="text-center">{{$student->grup}}</td>
                                 <td class="text-center">{{$student->ncontrol}}</td>
                                 <td class="text-center">{{$student->specialty}}</td>
-                                <td class="text-center">{{$student->imms}}</td>
+                                <td class="text-center">{{$student->imss}}</td>
                                 <td class="text-center">{{$student->tutor}}</td>
                                 <td class="text-center">{{$student->phoneTutor}}</td>
                                 <td class="text-center">

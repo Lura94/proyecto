@@ -21,7 +21,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = User::paginate(10);
+        $students = User::paginate(6);
         return view('student.index', compact('students'));
     }
 
@@ -143,5 +143,10 @@ class StudentsController extends Controller
             });
         })->export('xls');
 
+    }
+    public function filter(Request $request)
+    {
+        $students = User::select("users.*")->where([['name','like','%'.$request->filter.'%'],['id_rollet','=','2']])->paginate(10);
+        return view('student.index',compact('students'));
     }
 }

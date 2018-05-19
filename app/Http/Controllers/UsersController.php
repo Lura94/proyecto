@@ -18,7 +18,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::paginate(6);
         return view('users.index',compact('users'));
     }
 
@@ -102,7 +102,7 @@ class UsersController extends Controller
 
     public function filter(Request $request)
     {
-        $users = User::select("users.*")->where('name','like','%'.$request->filter.'%')->paginate(10);
+        $users = User::select("users.*")->where([['name','like','%'.$request->filter.'%'],['id_rollet','=','1']])->paginate(10);
         return view('users.index',compact('users'));
     }
 }

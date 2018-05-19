@@ -156,5 +156,8 @@ return [
         'phone' => 'Telefono',
         'specialty' => 'Especialidad',
         'id_student' => 'Alumno',
+        'tutor' => 'Tutor',
+        'phoneTutor' => 'Telefono de tutor',
+        'imss' => 'Clave del IMSS'
     ],
 ];
