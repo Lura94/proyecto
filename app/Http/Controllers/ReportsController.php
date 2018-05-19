@@ -82,7 +82,7 @@ class ReportsController extends Controller
      */
     public function update(ReportRequest $request, $id)
     {
-        $report = Report::find($id);
+        $report = Report::where("id_report","=",$id)->first();
         $report->fill($request->all());
         $report->save();
         Session::flash('message', 'El Reporte fue actualizado correctamente');

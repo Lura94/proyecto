@@ -6,7 +6,7 @@
         <div class="col-md-10 center-block">
             <div class="form-group row center-block">
                 <div class="center-block">@include('alerts.request')</div>
-                {!! Form::model($report,['route' => ['reports.update',$report->id], 'method' => 'PUT']) !!}
+                {!! Form::model($report,['route' => ['reports.update',$report->id_report], 'method' => 'PUT']) !!}
                 <input type="hidden" value="{{csrf_token()}}">
                 <div class="form-group row">
                     {!!Form::label('rol_id','Alumno:',['class' => 'col-md-1 col-form-label'])!!}
