@@ -35,11 +35,11 @@
                             <td class="text-center">{{$report->signed_hour}}</td>
                             <td class="text-center">{{$report->created_at}}</td>
                             <td class="text-center">
-                                <a href="{{ route('reports.edit',$report->id_report) }}" title="Editar Reporte"
+                                <a href="{{ route('reports.edit',$report->id) }}" title="Editar Reporte"
                                    class="btn glyphicon glyphicon-edit fa-2x ">
                                 </a>
                                 <a href="#exampleModal" data-toggle="modal"
-                                   data-id="{{ $report->id_report }}" title="Eliminar"
+                                   data-id="{{ $report->id }}" title="Eliminar"
                                    class="btn glyphicon glyphicon-trash fa-2x text-danger pull-right modalDelete">
                                 </a>
                             </td>

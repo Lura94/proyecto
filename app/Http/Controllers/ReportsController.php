@@ -68,7 +68,7 @@ class ReportsController extends Controller
      */
     public function edit($id)
     {
-        $report = Report::where("id_report","=",$id)->first();
+        $report = Report::where("id","=",$id)->first();
         $students = User::all();
         return view('reports.edit', compact('report', 'students'));
     }
@@ -82,7 +82,7 @@ class ReportsController extends Controller
      */
     public function update(ReportRequest $request, $id)
     {
-        $report = Report::where("id_report","=",$id)->first();
+        $report = Report::where("id","=",$id)->first();
         $report->fill($request->all());
         $report->save();
         Session::flash('message', 'El Reporte fue actualizado correctamente');
