@@ -11,7 +11,7 @@
                         <li class="glyphicon glyphicon-plus"></li>
                         Nuevo reporte</a>
                     {{Form::open(["route" => "reports.filter", "method" => "POST"])}}
-                    <input type="text" name="filter" class="control-label" id="filter" placeholder="Filtrar Por Profesor">
+                    <input type="text" name="filter" class="control-label" id="filter" placeholder="Filtrar Por Alumno">
                     <button type="submit"  class="btn btn-primary" style="margin-left: 10px">Aplicar Filtro</button>
                     {{Form::close()}}
                 </div>
@@ -35,11 +35,11 @@
                             <td class="text-center">{{$report->signed_hour}}</td>
                             <td class="text-center">{{$report->created_at}}</td>
                             <td class="text-center">
-                                <a href="{{ route('reports.edit',$report->id) }}" title="Editar Reporte"
+                                <a href="{{ route('reports.edit',$report->id_report) }}" title="Editar Reporte"
                                    class="btn glyphicon glyphicon-edit fa-2x ">
                                 </a>
                                 <a href="#exampleModal" data-toggle="modal"
-                                   data-id="{{ $report->id }}" title="Eliminar"
+                                   data-id="{{ $report->id_report }}" title="Eliminar"
                                    class="btn glyphicon glyphicon-trash fa-2x text-danger pull-right modalDelete">
                                 </a>
                             </td>

@@ -21,7 +21,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $students = User::paginate(6);
+        $students = User::select("users.*")->where("id_rollet","=","2")->paginate(6);
         return view('student.index', compact('students'));
     }
 

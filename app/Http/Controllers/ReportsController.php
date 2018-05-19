@@ -68,7 +68,7 @@ class ReportsController extends Controller
      */
     public function edit($id)
     {
-        $report = Report::find($id);
+        $report = Report::where("id_report","=",$id)->first();
         $students = User::all();
         return view('reports.edit', compact('report', 'students'));
     }
@@ -164,7 +164,9 @@ class ReportsController extends Controller
 
     public function filter(Request $request)
     {
-        $reports = Report::select("reports.*")->where([['name_teacher','like','%'.$request->filter.'%']])->paginate(10);
+        $reports = Report::select("reports.*")
+            ->join("users","users.id","reports.id_student")
+            ->where([['users.name','like','%'.$request->filter.'%']])->paginate(10);
         return view('reports.index',compact('reports'));
     }
 }
