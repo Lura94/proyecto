@@ -122,22 +122,26 @@ class StudentsController extends Controller
                 'ncontrol' => $student->ncontrol,
                 'curp' => $student->curp,
                 'grado' => $student->grade,
+                'especiality' => $student->specialty,
+                'group' => $student->group,
                 'email' => $student->email,
                 'phone' => $student->phone,
                 'group' => $student->grup,
-                'especiality' => $student->specialty,
-                'created_at' => Carbon::parse($student->created_At)->format('d-m-Y')
+                'imss'  => $student->imss,
+                'tutor' => $student->tutor,
+                'phoneTutor' => $student->phoneTutor,
+                //'created_at' => Carbon::parse($student->created_At)->format('d-m-Y')
             ];
             array_push($student_excel,$aux);
 
         }
-        $headers = array('PROFESOR', 'RASON', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+        $headers = array('Nombre Alumno', 'N° Control', 'CURP', 'Grado','Especialidad','Grupo', 'Correo Electronico','Telefono Alumno','IMSS','Tutor','Telefono Tutor');
 
         array_unshift($student_excel, $headers);
         ob_start();
         ob_clean();
 
-        Excel::create('Reporte', function ($excel) use ($student_excel) {
+        Excel::create('Lista General Alumos', function ($excel) use ($student_excel) {
             $excel->sheet('Listado', function ($sheet) use ($student_excel) {
                 $sheet->fromArray($student_excel, null, 'A1', false, false);
             });

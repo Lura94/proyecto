@@ -109,6 +109,7 @@ class ReportsController extends Controller
 
         foreach ($reports as $report) {
             $aux = [
+                
                 'name_teacher' => $report->name_teacher,
                 'reason' => $report->reason,
                 'description' => $report->description,
@@ -118,7 +119,7 @@ class ReportsController extends Controller
             array_push($reports_excel, $aux);
         }
 
-        $headers = array('PROFESOR', 'RAZÓN', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+        $headers = array( 'Docente', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');//reportes
 
         array_unshift($reports_excel, $headers);
         ob_start();
@@ -143,12 +144,13 @@ class ReportsController extends Controller
                 'name_teacher' => $report->name_teacher,
                 'reason' => $report->reason,
                 'description' => $report->description,
+                'signed_hour' => $report ->signed_hour,
                 'created_at' => Carbon::parse($report->created_At)->format('d-m-Y')
             ];
             array_push($report_excel,$aux);
 
         }
-        $headers = array('PROFESOR', 'RAZÓN', 'DESCRIPCION', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
+        $headers = array('Nombre Alumno','PROFESOR', 'RAZÓN', 'DESCRIPCIÓN', 'HORAS ASIGNADAS', 'FECHA DE REPORTE');
 
         array_unshift($report_excel, $headers);
         ob_start();

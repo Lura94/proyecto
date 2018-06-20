@@ -28,35 +28,37 @@ class StudentRequest extends FormRequest
             case 'POST':
                 return [
                     'name' => 'required|max:255',
+                    'ncontrol' => 'required',
                     'curp' => 'required',
                     'grade' => 'required|numeric|max:6',
+                    'specialty' => 'required',
+                    'grup' => 'required|alpha|max:1',
                     'email' => 'required|email|unique:users',
                     'password' => 'required|min:9',
-                    'grup' => 'required|alpha|max:1',
-                    'phone' => 'required',
-                    'ncontrol' => 'required',
-                    'specialty' => 'required',
+                    'phone' => 'required|numeric',
+                    'imss' => 'required',
                     'tutor' => 'required',
-                    'phoneTutor' => 'required',
-                    'imss' => 'required'
+                    'phoneTutor' => 'required|numeric',
+                    
 
                 ];
                 break;
             case 'PUT':
                 return [
                     'name' => 'required|max:255',
+                    'ncontrol' => 'required',
                     'curp' => 'required',
                     'grade' => 'required|numeric|max:6',
+                    'specialty' => 'required',
+                    'grup' => 'required|alpha|max:1',
                     'email' => 'required|email|unique:users,email,'.$this->get('id'),
                     'password' => 'max:255',
                     'password_confirm' => 'max:255|same:password',
-                    'grup' => 'required|alpha|max:1',
                     'phone' => 'required',
-                    'ncontrol' => 'required',
-                    'specialty' => 'required',
+                    'imss' => 'required',
                     'tutor' => 'required',
                     'phoneTutor' => 'required',
-                    'imss' => 'required'
+                    
 
                 ];
                 break;

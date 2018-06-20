@@ -18,15 +18,15 @@
 
                 </div>
                 <table class="table table-bordered">
-                    <thead>
+                    <thead style="font-size: 13">
                     <th class="text-center">Nombre</th>
+                    <th class="text-center">N° Control</th>
                     <th class="text-center">Curp</th>
                     <th class="text-center">Grado</th>
-                    <th class="text-center">email</th>
-                    <th class="text-center">Teléfono</th>
-                    <th class="text-center">Grupo</th>
-                    <th class="text-center">N control</th>
                     <th class="text-center">Especialidad</th>
+                    <th class="text-center">Grupo</th>
+                    <th class="text-center">Correo Electronico</th>
+                    <th class="text-center">Tel. Alumno</th>
                     <th class="text-center">IMSS</th>
                     <th class="text-center">Tutor</th>
                     <th class="text-center">Telefono Tutor</th>
@@ -37,15 +37,15 @@
                     <tbody>
                     @foreach($students as $student)
                         @if($student->roles->name  != "Administrador")
-                            <tr>
+                            <tr style="font-size: 12px ">
                                 <td class="text-center">{{$student->name}}</td>
+                                <td class="text-center">{{$student->ncontrol}}</td>
                                 <td class="text-center">{{$student->curp}}</td>
                                 <td class="text-center">{{$student->grade}}</td>
+                                <td class="text-center">{{$student->specialty}}</td>
+                                <td class="text-center">{{$student->grup}}</td>
                                 <td class="text-center">{{$student->email}}</td>
                                 <td class="text-center">{{$student->phone}}</td>
-                                <td class="text-center">{{$student->grup}}</td>
-                                <td class="text-center">{{$student->ncontrol}}</td>
-                                <td class="text-center">{{$student->specialty}}</td>
                                 <td class="text-center">{{$student->imss}}</td>
                                 <td class="text-center">{{$student->tutor}}</td>
                                 <td class="text-center">{{$student->phoneTutor}}</td>

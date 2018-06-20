@@ -43,7 +43,7 @@
                 <div class="form-group row">
                     <label for="password_confirm" class="col-md-2 control-label">Confirmar Contraseña:</label>
                     <div class="col-sm-8">
-                        <input type="password" name="password_confirm" class="form-control">
+                        <input type="password" name="password_confirm" class="form-control ">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -67,19 +67,19 @@
                 <div class="form-group row">
                     {!!Form::label('rol_id','IMSS:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('imss',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                        {!!Form::text('imss',null,['class'=>'form-control','required','placeholder' => ''])!!}
                     </div>
                 </div>
                 <div class="form-group row">
                     {!!Form::label('rol_id','Tutor:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                        {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => ''])!!}
                     </div>
                 </div>
                 <div class="form-group row">
                     {!!Form::label('rol_id','Telefono Tutor:',['class' => 'col-md-2 col-form-label'])!!}
                     <div class="col-md-8">
-                        {!!Form::text('phoneTutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                        {!!Form::text('phoneTutor',null,['class'=>'form-control','required','placeholder' => ''])!!}
                     </div>
                 </div>
                 <div class="form-group row">

@@ -61,13 +61,13 @@
             <div class="form-group row">
                 {!!Form::label('rol_id','Imss:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('imss',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                    {!!Form::text('imss',null,['class'=>'form-control','required','placeholder' => '45967910295'])!!}
                 </div>
             </div>
             <div class="form-group row">
                 {!!Form::label('tutor','Tutor:',['class' => 'col-md-2 col-form-label'])!!}
                 <div class="col-md-8">
-                    {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => '589674584'])!!}
+                    {!!Form::text('tutor',null,['class'=>'form-control','required','placeholder' => 'Jose Pérez Pérez'])!!}
                 </div>
             </div>
             <div class="form-group row">
